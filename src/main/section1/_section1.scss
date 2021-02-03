@@ -1,0 +1,123 @@
+.grid {
+    position:relative;
+    width: 1200px; 
+    margin:100px auto 200px;
+    padding-top:300px;
+    box-sizing: border-box;
+
+        .sizer, .item {
+            width:20%;
+        }
+        article {
+            &.item{
+                height:200px;
+                padding:10px;
+                box-sizing: border-box;
+            }
+
+            >div {
+                width: 100%;
+                height: 100%;
+                background: #ccc;
+            }
+
+            // @for  $i from 1 through 10{
+            //     &:nth-of-type(#{$i}){
+            //         >div{
+            //             background:url(../img/iso#{$i}.png) no-repeat center/cover;
+            //         }
+                    
+            //     }
+            // }
+            $h1:250px;
+            $h2:500px;
+            &:nth-of-type(1) {
+                height: $h1;
+                
+            }
+            &:nth-of-type(2) {
+                width:40%;
+                height: $h2;
+                >div{
+                    background:url(../img/iso2.png) no-repeat center/cover;
+                }
+            }
+            &:nth-of-type(3) {
+                height: $h1;
+                >div{
+                    background:#c92800;
+                }
+            }
+            &:nth-of-type(4) {
+                height: $h2;
+            }
+            &:nth-of-type(5) {
+                height: $h1;
+            }
+            &:nth-of-type(6) {
+                height: $h1;
+            }
+            &:nth-of-type(7) {
+                height: $h1;
+            }
+            &:nth-of-type(8) {
+                width:40%;
+                height: $h2;
+            }
+            &:nth-of-type(9) {
+                height: $h2;
+            }
+            &:nth-of-type(10) {
+                height: $h1;
+            }
+        }
+    }
+
+#round {
+    width:120px; height:120px;
+    position:absolute;
+    top:340px;left:10%;
+    border-radius: 50%;
+    border:1px solid #0b5c0b;
+    box-sizing: border-box;
+    padding:32px;
+    overflow: hidden;
+    p {
+        width:100%; height:100%;
+        letter-spacing: 30px;
+        text-align: left;
+        font: bold 15px/1.5 "Poiret One";
+        color:#0b5c0b;
+    }
+}
+
+@media screen and (max-width:999px) {
+    .grid {
+        width: 90%;
+
+        .sizer, .item {
+            width: 33.3333%;
+        }
+
+        article {         
+            &:nth-of-type(2) {width: 66.666%;}         
+            &:nth-of-type(8) {width: 66.666%;}         
+        }
+       
+    }
+}
+@media screen and (max-width:499px) {
+    .grid {
+        width: 90%;
+
+        .sizer, .item {
+            width: 50%;
+        }
+
+        article {         
+            &:nth-of-type(2) {width: 100%;}         
+            &:nth-of-type(8) {width: 100%;}         
+        }
+       
+    }
+}
